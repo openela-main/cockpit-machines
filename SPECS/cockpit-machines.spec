@@ -16,8 +16,8 @@
 #
 
 Name:           cockpit-machines
-Version:        284.1
-Release:        1%{?dist}
+Version:        298
+Release:        2%{?dist}
 Summary:        Cockpit user interface for virtual machines
 License:        LGPL-2.1-or-later AND MIT
 URL:            https://github.com/cockpit-project/cockpit-machines
@@ -63,7 +63,88 @@ Requires: libvirt-dbus >= 1.2.0
 Recommends: virt-install >= 3.0.0
 Recommends: libosinfo
 Recommends: python3-gobject-base
-Suggests: qemu-virtiofsd
+Suggests: (qemu-virtiofsd or virtiofsd)
+
+Provides: bundled(npm(@babel/runtime)) = 7.22.10
+Provides: bundled(npm(@novnc/novnc)) = 1.4.0
+Provides: bundled(npm(@patternfly/patternfly)) = 5.0.2
+Provides: bundled(npm(@patternfly/react-console)) = 5.0.0-alpha.1
+Provides: bundled(npm(@patternfly/react-core)) = 5.0.0
+Provides: bundled(npm(@patternfly/react-icons)) = 5.0.0
+Provides: bundled(npm(@patternfly/react-styles)) = 5.0.0
+Provides: bundled(npm(@patternfly/react-table)) = 5.0.0
+Provides: bundled(npm(@patternfly/react-tokens)) = 5.0.0
+Provides: bundled(npm(@spice-project/spice-html5)) = 0.2.1
+Provides: bundled(npm(array-buffer-byte-length)) = 1.0.0
+Provides: bundled(npm(attr-accept)) = 2.2.2
+Provides: bundled(npm(available-typed-arrays)) = 1.0.5
+Provides: bundled(npm(call-bind)) = 1.0.2
+Provides: bundled(npm(date-fns)) = 2.30.0
+Provides: bundled(npm(deep-equal)) = 2.2.2
+Provides: bundled(npm(define-properties)) = 1.2.0
+Provides: bundled(npm(es-get-iterator)) = 1.1.3
+Provides: bundled(npm(file-saver)) = 1.3.8
+Provides: bundled(npm(file-selector)) = 0.6.0
+Provides: bundled(npm(focus-trap)) = 7.4.3
+Provides: bundled(npm(for-each)) = 0.3.3
+Provides: bundled(npm(function-bind)) = 1.1.1
+Provides: bundled(npm(functions-have-names)) = 1.2.3
+Provides: bundled(npm(get-intrinsic)) = 1.2.1
+Provides: bundled(npm(gopd)) = 1.0.1
+Provides: bundled(npm(has-bigints)) = 1.0.2
+Provides: bundled(npm(has-property-descriptors)) = 1.0.0
+Provides: bundled(npm(has-proto)) = 1.0.1
+Provides: bundled(npm(has-symbols)) = 1.0.3
+Provides: bundled(npm(has-tostringtag)) = 1.0.0
+Provides: bundled(npm(has)) = 1.0.3
+Provides: bundled(npm(internal-slot)) = 1.0.5
+Provides: bundled(npm(is-arguments)) = 1.1.1
+Provides: bundled(npm(is-array-buffer)) = 3.0.2
+Provides: bundled(npm(is-bigint)) = 1.0.4
+Provides: bundled(npm(is-boolean-object)) = 1.1.2
+Provides: bundled(npm(is-callable)) = 1.2.7
+Provides: bundled(npm(is-date-object)) = 1.0.5
+Provides: bundled(npm(is-map)) = 2.0.2
+Provides: bundled(npm(is-number-object)) = 1.0.7
+Provides: bundled(npm(is-regex)) = 1.1.4
+Provides: bundled(npm(is-set)) = 2.0.2
+Provides: bundled(npm(is-shared-array-buffer)) = 1.0.2
+Provides: bundled(npm(is-string)) = 1.0.7
+Provides: bundled(npm(is-symbol)) = 1.0.4
+Provides: bundled(npm(is-typed-array)) = 1.1.12
+Provides: bundled(npm(is-weakmap)) = 2.0.1
+Provides: bundled(npm(is-weakset)) = 2.0.2
+Provides: bundled(npm(isarray)) = 2.0.5
+Provides: bundled(npm(js-tokens)) = 4.0.0
+Provides: bundled(npm(lodash)) = 4.17.21
+Provides: bundled(npm(loose-envify)) = 1.4.0
+Provides: bundled(npm(object-assign)) = 4.1.1
+Provides: bundled(npm(object-inspect)) = 1.12.3
+Provides: bundled(npm(object-is)) = 1.1.5
+Provides: bundled(npm(object-keys)) = 1.1.1
+Provides: bundled(npm(object.assign)) = 4.1.4
+Provides: bundled(npm(prop-types)) = 15.8.1
+Provides: bundled(npm(react-dom)) = 18.2.0
+Provides: bundled(npm(react-dropzone)) = 14.2.3
+Provides: bundled(npm(react-is)) = 16.13.1
+Provides: bundled(npm(react)) = 18.2.0
+Provides: bundled(npm(redux-thunk)) = 2.4.2
+Provides: bundled(npm(redux)) = 4.2.1
+Provides: bundled(npm(regenerator-runtime)) = 0.14.0
+Provides: bundled(npm(regexp.prototype.flags)) = 1.5.0
+Provides: bundled(npm(scheduler)) = 0.23.0
+Provides: bundled(npm(side-channel)) = 1.0.4
+Provides: bundled(npm(stop-iteration-iterator)) = 1.0.0
+Provides: bundled(npm(tabbable)) = 6.2.0
+Provides: bundled(npm(throttle-debounce)) = 5.0.0
+Provides: bundled(npm(tslib)) = 2.6.2
+Provides: bundled(npm(which-boxed-primitive)) = 1.0.2
+Provides: bundled(npm(which-collection)) = 1.0.1
+Provides: bundled(npm(which-typed-array)) = 1.1.11
+Provides: bundled(npm(xterm-addon-canvas)) = 0.4.0
+Provides: bundled(npm(xterm-addon-fit)) = 0.2.1
+Provides: bundled(npm(xterm)) = 4.19.0
+Provides: bundled(npm(xterm)) = 5.1.0
 
 %description
 Cockpit component for managing virtual machines.
@@ -77,19 +158,71 @@ If "virt-install" is installed, you can also create new virtual machines.
 # Nothing to build
 
 %install
-%make_install
+%make_install PREFIX=/usr
 appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 %files
 %doc README.md
-%license LICENSE dist/index.js.LICENSE.txt.gz
+%license LICENSE dist/index.js.LEGAL.txt dist/index.css.LEGAL.txt
 %{_datadir}/cockpit/*
 %{_datadir}/metainfo/*
 
 # The changelog is automatically generated and merged
 %changelog
-* Thu Feb 23 2023 Martin Pitt <mpitt@redhat.com> - 284.1-1
-- Translation updates (rhbz#2139646)
+* Thu Sep 07 2023 Packit <hello@packit.dev> - 298-2
+- Rebuild for RHEL 9.3.0
+
+* Wed Sep 06 2023 Packit <hello@packit.dev> - 298-1
+- Bug fixes and stability improvements
+
+* Wed Aug 23 2023 Packit <hello@packit.dev> - 297-1
+- Bug fixes and stability improvements
+
+* Wed Aug 09 2023 Packit <hello@packit.dev> - 296-1
+- Update to PatternFly 5
+
+* Wed Jul 26 2023 Packit <hello@packit.dev> - 295-1
+- Performance and stability improvements
+
+* Wed Jul 19 2023 Fedora Release Engineering <releng@fedoraproject.org> - 294-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
+
+* Wed Jul 12 2023 Packit <hello@packit.dev> - 294-1
+- Bug fixes and translation updates
+
+* Wed Jun 28 2023 Packit <hello@packit.dev> - 293-1
+- Confirm shutdown actions
+- Show virtual interface's TAP device
+
+* Thu Jun 15 2023 Packit <hello@packit.dev> - 292-1
+- Add manifest condition for the Python bridge
+
+* Thu Jun 01 2023 Packit <hello@packit.dev> - 291-1
+- Maintenance and translation updates
+
+* Tue May 16 2023 Packit <hello@packit.dev> - 290-1
+- Apply watchdog changes on next boot if hotplug fails
+
+* Fri May 05 2023 Packit <hello@packit.dev> - 289.1-1
+- Fix alignment of icons in main view
+
+* Thu May 04 2023 Packit <hello@packit.dev> - 289-1
+- Update to PatternFly 5 Alpha
+- Option to use RAW volume during VM creation
+- Redesign VM’s CPU configuration
+
+* Wed Apr 19 2023 Packit <hello@packit.dev> - 288-1
+- Indicate need for shutdown
+- Delete storage file upon disk detachment
+
+* Thu Apr 06 2023 Packit <hello@packit.dev> - 287-1
+- Show an alert when virtualization is disabled in BIOS/EFI
+
+* Wed Mar 22 2023 Packit <hello@packit.dev> - 286-1
+- Create VM based on cloud image and start it later
+
+* Wed Mar 08 2023 Packit <hello@packit.dev> - 285-1
+- Stability and performance improvements
 
 * Wed Feb 22 2023 Packit <hello@packit.dev> - 284-1
 - Stability and performance improvements
