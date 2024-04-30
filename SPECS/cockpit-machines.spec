@@ -16,8 +16,8 @@
 #
 
 Name:           cockpit-machines
-Version:        298
-Release:        2%{?dist}
+Version:        308
+Release:        1%{?dist}
 Summary:        Cockpit user interface for virtual machines
 License:        LGPL-2.1-or-later AND MIT
 URL:            https://github.com/cockpit-project/cockpit-machines
@@ -65,41 +65,43 @@ Recommends: libosinfo
 Recommends: python3-gobject-base
 Suggests: (qemu-virtiofsd or virtiofsd)
 
-Provides: bundled(npm(@babel/runtime)) = 7.22.10
 Provides: bundled(npm(@novnc/novnc)) = 1.4.0
-Provides: bundled(npm(@patternfly/patternfly)) = 5.0.2
-Provides: bundled(npm(@patternfly/react-console)) = 5.0.0-alpha.1
-Provides: bundled(npm(@patternfly/react-core)) = 5.0.0
-Provides: bundled(npm(@patternfly/react-icons)) = 5.0.0
-Provides: bundled(npm(@patternfly/react-styles)) = 5.0.0
-Provides: bundled(npm(@patternfly/react-table)) = 5.0.0
-Provides: bundled(npm(@patternfly/react-tokens)) = 5.0.0
+Provides: bundled(npm(@patternfly/patternfly)) = 5.2.0
+Provides: bundled(npm(@patternfly/react-console)) = 5.0.0
+Provides: bundled(npm(@patternfly/react-core)) = 5.2.0
+Provides: bundled(npm(@patternfly/react-icons)) = 5.2.0
+Provides: bundled(npm(@patternfly/react-styles)) = 5.2.0
+Provides: bundled(npm(@patternfly/react-table)) = 5.2.0
+Provides: bundled(npm(@patternfly/react-tokens)) = 5.2.0
 Provides: bundled(npm(@spice-project/spice-html5)) = 0.2.1
-Provides: bundled(npm(array-buffer-byte-length)) = 1.0.0
+Provides: bundled(npm(array-buffer-byte-length)) = 1.0.1
 Provides: bundled(npm(attr-accept)) = 2.2.2
-Provides: bundled(npm(available-typed-arrays)) = 1.0.5
-Provides: bundled(npm(call-bind)) = 1.0.2
-Provides: bundled(npm(date-fns)) = 2.30.0
-Provides: bundled(npm(deep-equal)) = 2.2.2
-Provides: bundled(npm(define-properties)) = 1.2.0
+Provides: bundled(npm(available-typed-arrays)) = 1.0.6
+Provides: bundled(npm(call-bind)) = 1.0.7
+Provides: bundled(npm(date-fns)) = 3.3.1
+Provides: bundled(npm(deep-equal)) = 2.2.3
+Provides: bundled(npm(define-data-property)) = 1.1.4
+Provides: bundled(npm(define-properties)) = 1.2.1
+Provides: bundled(npm(es-define-property)) = 1.0.0
+Provides: bundled(npm(es-errors)) = 1.3.0
 Provides: bundled(npm(es-get-iterator)) = 1.1.3
 Provides: bundled(npm(file-saver)) = 1.3.8
 Provides: bundled(npm(file-selector)) = 0.6.0
-Provides: bundled(npm(focus-trap)) = 7.4.3
+Provides: bundled(npm(focus-trap)) = 7.5.2
 Provides: bundled(npm(for-each)) = 0.3.3
-Provides: bundled(npm(function-bind)) = 1.1.1
+Provides: bundled(npm(function-bind)) = 1.1.2
 Provides: bundled(npm(functions-have-names)) = 1.2.3
-Provides: bundled(npm(get-intrinsic)) = 1.2.1
+Provides: bundled(npm(get-intrinsic)) = 1.2.4
 Provides: bundled(npm(gopd)) = 1.0.1
 Provides: bundled(npm(has-bigints)) = 1.0.2
-Provides: bundled(npm(has-property-descriptors)) = 1.0.0
+Provides: bundled(npm(has-property-descriptors)) = 1.0.2
 Provides: bundled(npm(has-proto)) = 1.0.1
 Provides: bundled(npm(has-symbols)) = 1.0.3
-Provides: bundled(npm(has-tostringtag)) = 1.0.0
-Provides: bundled(npm(has)) = 1.0.3
-Provides: bundled(npm(internal-slot)) = 1.0.5
+Provides: bundled(npm(has-tostringtag)) = 1.0.2
+Provides: bundled(npm(hasown)) = 2.0.1
+Provides: bundled(npm(internal-slot)) = 1.0.7
 Provides: bundled(npm(is-arguments)) = 1.1.1
-Provides: bundled(npm(is-array-buffer)) = 3.0.2
+Provides: bundled(npm(is-array-buffer)) = 3.0.4
 Provides: bundled(npm(is-bigint)) = 1.0.4
 Provides: bundled(npm(is-boolean-object)) = 1.1.2
 Provides: bundled(npm(is-callable)) = 1.2.7
@@ -111,7 +113,6 @@ Provides: bundled(npm(is-set)) = 2.0.2
 Provides: bundled(npm(is-shared-array-buffer)) = 1.0.2
 Provides: bundled(npm(is-string)) = 1.0.7
 Provides: bundled(npm(is-symbol)) = 1.0.4
-Provides: bundled(npm(is-typed-array)) = 1.1.12
 Provides: bundled(npm(is-weakmap)) = 2.0.1
 Provides: bundled(npm(is-weakset)) = 2.0.2
 Provides: bundled(npm(isarray)) = 2.0.5
@@ -119,28 +120,29 @@ Provides: bundled(npm(js-tokens)) = 4.0.0
 Provides: bundled(npm(lodash)) = 4.17.21
 Provides: bundled(npm(loose-envify)) = 1.4.0
 Provides: bundled(npm(object-assign)) = 4.1.1
-Provides: bundled(npm(object-inspect)) = 1.12.3
+Provides: bundled(npm(object-inspect)) = 1.13.1
 Provides: bundled(npm(object-is)) = 1.1.5
 Provides: bundled(npm(object-keys)) = 1.1.1
-Provides: bundled(npm(object.assign)) = 4.1.4
+Provides: bundled(npm(object.assign)) = 4.1.5
 Provides: bundled(npm(prop-types)) = 15.8.1
 Provides: bundled(npm(react-dom)) = 18.2.0
 Provides: bundled(npm(react-dropzone)) = 14.2.3
 Provides: bundled(npm(react-is)) = 16.13.1
 Provides: bundled(npm(react)) = 18.2.0
-Provides: bundled(npm(redux-thunk)) = 2.4.2
-Provides: bundled(npm(redux)) = 4.2.1
-Provides: bundled(npm(regenerator-runtime)) = 0.14.0
-Provides: bundled(npm(regexp.prototype.flags)) = 1.5.0
+Provides: bundled(npm(redux-thunk)) = 3.1.0
+Provides: bundled(npm(redux)) = 5.0.1
+Provides: bundled(npm(regexp.prototype.flags)) = 1.5.2
 Provides: bundled(npm(scheduler)) = 0.23.0
-Provides: bundled(npm(side-channel)) = 1.0.4
+Provides: bundled(npm(set-function-length)) = 1.2.1
+Provides: bundled(npm(set-function-name)) = 2.0.1
+Provides: bundled(npm(side-channel)) = 1.0.5
 Provides: bundled(npm(stop-iteration-iterator)) = 1.0.0
 Provides: bundled(npm(tabbable)) = 6.2.0
 Provides: bundled(npm(throttle-debounce)) = 5.0.0
 Provides: bundled(npm(tslib)) = 2.6.2
 Provides: bundled(npm(which-boxed-primitive)) = 1.0.2
 Provides: bundled(npm(which-collection)) = 1.0.1
-Provides: bundled(npm(which-typed-array)) = 1.1.11
+Provides: bundled(npm(which-typed-array)) = 1.1.14
 Provides: bundled(npm(xterm-addon-canvas)) = 0.4.0
 Provides: bundled(npm(xterm-addon-fit)) = 0.2.1
 Provides: bundled(npm(xterm)) = 4.19.0
@@ -169,8 +171,44 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 # The changelog is automatically generated and merged
 %changelog
-* Thu Sep 07 2023 Packit <hello@packit.dev> - 298-2
-- Rebuild for RHEL 9.3.0
+* Tue Feb 20 2024 Packit <hello@packit.dev> - 308-1
+- Add TPM when switching to EFI
+- Translation updates (RHEL-14230)
+
+* Wed Feb 14 2024 Packit <hello@packit.dev> - 307-1
+- Mass SPICE replacement
+- Pre-formatted Block Device storage pool support
+
+* Wed Jan 31 2024 Packit <hello@packit.dev> - 306-1
+- Machines: Action to Replace SPICE devices
+- Machines: Create external snapshots when supported
+
+* Wed Jan 24 2024 Fedora Release Engineering <releng@fedoraproject.org> - 305-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
+
+* Fri Jan 19 2024 Fedora Release Engineering <releng@fedoraproject.org> - 305-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_40_Mass_Rebuild
+
+* Thu Jan 18 2024 Packit <hello@packit.dev> - 305-1
+- many small bug fixes
+
+* Fri Dec 15 2023 Martin Pitt <mpitt@redhat.com> - 304-1
+- Performance and stability improvements
+
+* Wed Nov 29 2023 Packit <hello@packit.dev> - 303-1
+- Change "Add disk" default behavior
+
+* Wed Nov 15 2023 Packit <hello@packit.dev> - 302-1
+- Performance and stability improvements
+
+* Thu Nov 02 2023 Packit <hello@packit.dev> - 301.1-1
+- Test fixes
+
+* Wed Oct 18 2023 Packit <hello@packit.dev> - 300-1
+- Add SSH keys to VM creation dialog
+
+* Wed Sep 20 2023 Packit <hello@packit.dev> - 299-1
+- Performance and stability improvements
 
 * Wed Sep 06 2023 Packit <hello@packit.dev> - 298-1
 - Bug fixes and stability improvements
@@ -423,3 +461,5 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 * Thu Apr 01 2021 Katerina Koukiou <kkoukiou@redhat.com> - 242.1-1
 - Add MIT to the list of licenses in spec file
+
+
