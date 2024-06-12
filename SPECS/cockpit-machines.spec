@@ -16,7 +16,7 @@
 #
 
 Name:           cockpit-machines
-Version:        308
+Version:        308.3
 Release:        1%{?dist}
 Summary:        Cockpit user interface for virtual machines
 License:        LGPL-2.1-or-later AND MIT
@@ -171,6 +171,13 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 # The changelog is automatically generated and merged
 %changelog
+* Thu May 02 2024 Martin Pitt <mpitt@redhat.com> - 308.3-1
+ - Only use external snapshots for disks of type "file" (RHEL-34569)
+ - Skip empty media drives for external snapshots
+ - Refresh VM after creating/reverting/deleting snapshots
+ - Don't list disks in snapshot XML
+ - Fix detaching host devices for running VMs (RHEL-31082)
+
 * Tue Feb 20 2024 Packit <hello@packit.dev> - 308-1
 - Add TPM when switching to EFI
 - Translation updates (RHEL-14230)
@@ -461,5 +468,3 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 * Thu Apr 01 2021 Katerina Koukiou <kkoukiou@redhat.com> - 242.1-1
 - Add MIT to the list of licenses in spec file
-
-
