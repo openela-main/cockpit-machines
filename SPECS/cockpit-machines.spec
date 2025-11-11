@@ -16,7 +16,7 @@
 #
 
 Name:           cockpit-machines
-Version:        328.1
+Version:        337
 Release:        1%{?dist}
 Summary:        Cockpit user interface for virtual machines
 License:        LGPL-2.1-or-later AND MIT
@@ -68,23 +68,19 @@ Recommends: libosinfo
 Recommends: python3-gobject-base
 Suggests: (qemu-virtiofsd or virtiofsd)
 
-Provides: bundled(npm(@novnc/novnc)) = 1.4.0
 Provides: bundled(npm(@novnc/novnc)) = 1.5.0
-Provides: bundled(npm(@patternfly/patternfly)) = 5.4.2
-Provides: bundled(npm(@patternfly/react-console)) = 5.1.0
-Provides: bundled(npm(@patternfly/react-core)) = 5.4.12
-Provides: bundled(npm(@patternfly/react-icons)) = 5.4.2
-Provides: bundled(npm(@patternfly/react-styles)) = 5.4.1
-Provides: bundled(npm(@patternfly/react-table)) = 5.4.14
-Provides: bundled(npm(@patternfly/react-tokens)) = 5.4.1
-Provides: bundled(npm(@spice-project/spice-html5)) = 0.2.1
+Provides: bundled(npm(@patternfly/patternfly)) = 6.3.0
+Provides: bundled(npm(@patternfly/react-core)) = 6.3.0
+Provides: bundled(npm(@patternfly/react-icons)) = 6.3.0
+Provides: bundled(npm(@patternfly/react-styles)) = 6.3.0
+Provides: bundled(npm(@patternfly/react-table)) = 6.3.0
+Provides: bundled(npm(@patternfly/react-tokens)) = 6.3.0
 Provides: bundled(npm(@xterm/addon-canvas)) = 0.7.0
 Provides: bundled(npm(@xterm/xterm)) = 5.5.0
 Provides: bundled(npm(attr-accept)) = 2.2.5
 Provides: bundled(npm(dequal)) = 2.0.3
-Provides: bundled(npm(file-saver)) = 1.3.8
 Provides: bundled(npm(file-selector)) = 2.1.2
-Provides: bundled(npm(focus-trap)) = 7.6.2
+Provides: bundled(npm(focus-trap)) = 7.6.4
 Provides: bundled(npm(ipaddr.js)) = 2.2.0
 Provides: bundled(npm(js-tokens)) = 4.0.0
 Provides: bundled(npm(lodash)) = 4.17.21
@@ -92,7 +88,7 @@ Provides: bundled(npm(loose-envify)) = 1.4.0
 Provides: bundled(npm(object-assign)) = 4.1.1
 Provides: bundled(npm(prop-types)) = 15.8.1
 Provides: bundled(npm(react-dom)) = 18.3.1
-Provides: bundled(npm(react-dropzone)) = 14.3.5
+Provides: bundled(npm(react-dropzone)) = 14.3.8
 Provides: bundled(npm(react-is)) = 16.13.1
 Provides: bundled(npm(react)) = 18.3.1
 Provides: bundled(npm(redux-thunk)) = 3.1.0
@@ -101,8 +97,6 @@ Provides: bundled(npm(scheduler)) = 0.23.2
 Provides: bundled(npm(tabbable)) = 6.2.0
 Provides: bundled(npm(throttle-debounce)) = 5.0.2
 Provides: bundled(npm(tslib)) = 2.8.1
-Provides: bundled(npm(xterm-addon-fit)) = 0.2.1
-Provides: bundled(npm(xterm)) = 4.19.0
 
 %description
 Cockpit component for managing libvirt virtual machines.
@@ -125,8 +119,44 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 # The changelog is automatically generated and merged
 %changelog
-* Mon Mar 10 2025 Martin Pitt <mpitt@redhat.com> - 328.1-1
-- translation updates (RHEL-82803)
+* Wed Aug 06 2025 Packit <hello@packit.dev> - 337-1
+Bug fixes and translation updates
+
+* Wed Jul 23 2025 Fedora Release Engineering <releng@fedoraproject.org> - 336-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild
+
+* Wed Jul 23 2025 Packit <hello@packit.dev> - 336-1
+- Graphical VNC and serial consoles improvements
+- Control VNC console resizing and scaling
+- Bug fixes and translation updates
+
+* Wed Jul 09 2025 Packit <hello@packit.dev> - 335-1
+- Bug fixes and translation updates
+
+* Wed Jun 25 2025 Packit <hello@packit.dev> - 334-1
+- Bug fixes and translation updates
+
+* Wed Jun 04 2025 Packit <hello@packit.dev> - 333-1
+- Virtual network interfaces can now select source mode
+- Bug fixes and translation updates
+
+* Wed May 21 2025 Packit <hello@packit.dev> - 332-1
+- The "shareable" attribute of disks is no longer modified by Cockpit
+- Bug fixes and translation updates
+
+* Wed May 07 2025 Packit <hello@packit.dev> - 331-1
+- Translation updates
+- Bug fixes
+
+* Wed Apr 23 2025 Packit <hello@packit.dev> - 330-1
+- Upgraded to Patternfly 6
+
+* Wed Mar 12 2025 Packit <hello@packit.dev> - 329-1
+- Translation updates
+- Bug fixes
+
+* Thu Feb 27 2025 Packit <hello@packit.dev> - 328-1
+- Bug fixes
 
 * Wed Jan 29 2025 Packit <hello@packit.dev> - 327-1
 - Translation updates
