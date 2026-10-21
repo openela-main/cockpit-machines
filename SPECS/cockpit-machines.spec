@@ -3,7 +3,7 @@
 # Copyright (C) 2021 Red Hat, Inc.
 
 Name:           cockpit-machines
-Version:        348
+Version:        348.1
 Release:        1%{?dist}
 Summary:        Cockpit user interface for virtual machines
 License:        LGPL-2.1-or-later AND MIT
@@ -118,6 +118,11 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 # The changelog is automatically generated and merged
 %changelog
+* Tue Sep 22 2026 Marius Vollmer <mvollmer@redhat.com> - 348.1-1
+- CVE-2026-92768 (RHEL-263127)
+- CVE-2026-92747 (RHEL-263114)
+- CVE-2026-92745 (RHEL-263111)
+
 * Wed Feb 11 2026 Packit <hello@packit.dev> - 348-1
 - Convert license headers to SPDX format
 
@@ -570,5 +575,3 @@ Resolves: jira#RHEL-33468
 
 * Thu Apr 01 2021 Katerina Koukiou <kkoukiou@redhat.com> - 242.1-1
 - Add MIT to the list of licenses in spec file
-
-
