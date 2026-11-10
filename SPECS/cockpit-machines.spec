@@ -3,15 +3,16 @@
 # Copyright (C) 2021 Red Hat, Inc.
 
 Name:           cockpit-machines
-Version:        348.1
+Version:        355
 Release:        1%{?dist}
 Summary:        Cockpit user interface for virtual machines
 License:        LGPL-2.1-or-later AND MIT
 URL:            https://github.com/cockpit-project/cockpit-machines
 
 # distributions which ship nodejs-esbuild can rebuild the bundle during package build
+# allow override from command line (e.g. for development builds)
 %if 0%{?fedora} >= 42
-%define rebuild_bundle 1
+%{!?rebuild_bundle: %define rebuild_bundle 1}
 %endif
 
 Source0: https://github.com/cockpit-project/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz
@@ -28,7 +29,7 @@ BuildRequires: gettext
 %if 0%{?rhel} && 0%{?rhel} <= 8
 BuildRequires: libappstream-glib-devel
 %endif
-%if %{defined rebuild_bundle}
+%if 0%{?rebuild_bundle}
 BuildRequires: /usr/bin/node
 BuildRequires: nodejs-esbuild
 %endif
@@ -68,22 +69,21 @@ Recommends: python3-gobject-base
 Suggests: (qemu-virtiofsd or virtiofsd)
 
 Provides: bundled(npm(@novnc/novnc)) = 1.5.0
-Provides: bundled(npm(@patternfly/react-core)) = 6.4.1
-Provides: bundled(npm(@patternfly/react-icons)) = 6.4.0
-Provides: bundled(npm(@patternfly/react-styles)) = 6.4.0
-Provides: bundled(npm(@patternfly/react-table)) = 6.4.1
-Provides: bundled(npm(@patternfly/react-tokens)) = 6.4.0
+Provides: bundled(npm(@patternfly/react-core)) = 6.6.0
+Provides: bundled(npm(@patternfly/react-icons)) = 6.6.0
+Provides: bundled(npm(@patternfly/react-styles)) = 6.6.0
+Provides: bundled(npm(@patternfly/react-table)) = 6.6.0
+Provides: bundled(npm(@patternfly/react-tokens)) = 6.6.0
 Provides: bundled(npm(@xterm/addon-webgl)) = 0.19.0
 Provides: bundled(npm(@xterm/xterm)) = 6.0.0
 Provides: bundled(npm(dequal)) = 2.0.3
-Provides: bundled(npm(focus-trap)) = 7.6.4
-Provides: bundled(npm(ipaddr.js)) = 2.3.0
-Provides: bundled(npm(lodash)) = 4.17.23
-Provides: bundled(npm(prop-types)) = 15.8.1
+Provides: bundled(npm(focus-trap)) = 7.6.6
+Provides: bundled(npm(ipaddr.js)) = 2.4.0
+Provides: bundled(npm(lodash)) = 4.18.1
 Provides: bundled(npm(react)) = 18.3.1
 Provides: bundled(npm(react-dom)) = 18.3.1
 Provides: bundled(npm(scheduler)) = 0.23.2
-Provides: bundled(npm(tabbable)) = 6.4.0
+Provides: bundled(npm(tabbable)) = 6.5.0
 Provides: bundled(npm(throttle-debounce)) = 5.0.2
 Provides: bundled(npm(tslib)) = 2.8.1
 
@@ -92,12 +92,12 @@ Cockpit component for managing libvirt virtual machines.
 
 %prep
 %setup -q -n %{name}
-%if %{defined rebuild_bundle}
+%if 0%{?rebuild_bundle}
 %setup -q -D -T -a 1 -n %{name}
 %endif
 
 %build
-%if %{defined rebuild_bundle}
+%if 0%{?rebuild_bundle}
 rm -rf dist
 # HACK: node module packaging is broken in Fedora ≤ 43; should be in
 # common location, not major version specific one
@@ -118,10 +118,32 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 # The changelog is automatically generated and merged
 %changelog
-* Tue Sep 22 2026 Marius Vollmer <mvollmer@redhat.com> - 348.1-1
-- CVE-2026-92768 (RHEL-263127)
-- CVE-2026-92747 (RHEL-263114)
-- CVE-2026-92745 (RHEL-263111)
+* Thu Jul 30 2026 Packit <hello@packit.dev> - 355-1
+- Translations and dependency updates
+
+* Wed Jul 15 2026 Fedora Release Engineering <releng@fedoraproject.org> - 354-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_45_Mass_Rebuild
+
+* Tue Jun 23 2026 Packit <hello@packit.dev> - 354-1
+- Bug fixes and translation updates
+
+* Wed May 20 2026 Packit <hello@packit.dev> - 353-1
+- Bug fixes and translation updates
+
+* Tue Apr 21 2026 Packit <hello@packit.dev> - 352-1
+- Improvements to the "Add disk" and "Create Volume" dialogs
+
+* Wed Mar 25 2026 Packit <hello@packit.dev> - 351-1
+- Bug fixes and translation updates
+
+
+* Wed Mar 18 2026 Packit <hello@packit.dev> - 350-1
+- Bug fixes and translation updates
+
+
+* Fri Feb 27 2026 Packit <hello@packit.dev> - 349.1-1
+- fix extra-args related regression in "Create and edit"
+
 
 * Wed Feb 11 2026 Packit <hello@packit.dev> - 348-1
 - Convert license headers to SPDX format
@@ -575,3 +597,5 @@ Resolves: jira#RHEL-33468
 
 * Thu Apr 01 2021 Katerina Koukiou <kkoukiou@redhat.com> - 242.1-1
 - Add MIT to the list of licenses in spec file
+
+
