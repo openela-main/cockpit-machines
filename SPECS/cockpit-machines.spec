@@ -3,7 +3,7 @@
 # Copyright (C) 2021 Red Hat, Inc.
 
 Name:           cockpit-machines
-Version:        355
+Version:        355.1
 Release:        1%{?dist}
 Summary:        Cockpit user interface for virtual machines
 License:        LGPL-2.1-or-later AND MIT
@@ -118,6 +118,11 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 # The changelog is automatically generated and merged
 %changelog
+* Wed Sep 23 2026 Marius Vollmer <marius.vollmer@gmail.com> - 355-2
+- CVE-2026-92768 (RHEL-263128)
+- CVE-2026-92747 (RHEL-263118)
+- CVE-2026-92745 (RHEL-263117)
+
 * Thu Jul 30 2026 Packit <hello@packit.dev> - 355-1
 - Translations and dependency updates
 
