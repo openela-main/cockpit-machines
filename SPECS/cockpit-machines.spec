@@ -3,7 +3,7 @@
 # Copyright (C) 2021 Red Hat, Inc.
 
 Name:           cockpit-machines
-Version:        355.1
+Version:        355.2
 Release:        1%{?dist}
 Summary:        Cockpit user interface for virtual machines
 License:        LGPL-2.1-or-later AND MIT
@@ -118,6 +118,10 @@ appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/*
 
 # The changelog is automatically generated and merged
 %changelog
+* Fri Oct 30 2026 Marius Vollmer <marius.vollmer@gmail.com> - 355.2-1
+- CVE-2026-113495 (RHEL-288645)
+- CVE-2026-113496 (RHEL-289056)
+
 * Wed Sep 23 2026 Marius Vollmer <marius.vollmer@gmail.com> - 355-2
 - CVE-2026-92768 (RHEL-263128)
 - CVE-2026-92747 (RHEL-263118)
@@ -602,5 +606,3 @@ Resolves: jira#RHEL-33468
 
 * Thu Apr 01 2021 Katerina Koukiou <kkoukiou@redhat.com> - 242.1-1
 - Add MIT to the list of licenses in spec file
-
-
